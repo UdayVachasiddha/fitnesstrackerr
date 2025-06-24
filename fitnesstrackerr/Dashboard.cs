@@ -24,7 +24,7 @@ namespace fitnesstrackerr
 
 
         // Connection string for database
-        private readonly string connString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Uday\OneDrive\Desktop\LoginDatabase.accdb;";
+        private readonly string connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=LoginDatabase.accdb;";
         public Dashboard(string username, string activity, double m1, double m2, double m3, double calories)
         {
             InitializeComponent();

@@ -30,7 +30,7 @@ namespace fitnesstrackerr
 
         }
 
-        string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Uday\OneDrive\Desktop\LoginDatabase.accdb;";
+        string connectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=LoginDatabase.accdb;";
         OleDbConnection conn;
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -125,18 +125,37 @@ namespace fitnesstrackerr
             panel3.Visible = false;
         }
 
+        int loginAttempts = 0;
+        const int MaxLoginAttempts = 3;
+        DateTime lockoutEndTime = DateTime.MinValue;
+
         private void button1_Click(object sender, EventArgs e)
         {
             string username = textBox1.Text.Trim();
-            string password = textBox2.Text.Trim();
+            string password = txtLoginPassword.Text.Trim();
 
-            if (password.Length != 12 || !password.Any(char.IsUpper) || !password.Any(char.IsLower))
+            if (DateTime.Now < lockoutEndTime)
             {
-                MessageBox.Show("Password must be 12 characters and contain both uppercase and lowercase letters.");
+                TimeSpan remaining = lockoutEndTime - DateTime.Now;
+                MessageBox.Show($"Too many attempts. Try again after {remaining.Seconds} seconds.");
                 return;
             }
 
-                using (OleDbConnection con = new OleDbConnection(connectionString))
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Please fill in all fields.");
+                return;
+            }
+
+
+            //if (loginAttempts >= MaxLoginAttempts)
+            //{
+            //    MessageBox.Show("Maximum login attempts exceeded. Please try again later.");
+            //    btnLogin.Enabled = false;
+            //    return;
+            //}
+
+            using (OleDbConnection con = new OleDbConnection(connectionString))
             {
                 try
                 {
@@ -147,11 +166,12 @@ namespace fitnesstrackerr
                     cmd.Parameters.AddWithValue("?", username);
                     cmd.Parameters.AddWithValue("?", password);
 
-                    int result = (int)cmd.ExecuteScalar();
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
 
-                    if (result > 0)
+                    if (count == 1)
                     {
-                        MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Login successful!");
+                        loginAttempts = 0;
 
                         Session.LoggedInUsername = username;
                         string loggedInUsername = "JohnDoe";
@@ -170,15 +190,27 @@ namespace fitnesstrackerr
                         this.Hide();
 
                     }
+
                     else
                     {
-                        MessageBox.Show("Invalid credentials!", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        loginAttempts++;
+
+                        if (loginAttempts >= MaxLoginAttempts)
+                        {
+                            lockoutEndTime = DateTime.Now.AddSeconds(30); // 30 sec cooldown
+                            MessageBox.Show("Too many failed attempts. Please try again after 30 seconds.");
+                        }
+                        else
+                        {
+                            int remainingAttempts = MaxLoginAttempts - loginAttempts;
+                            MessageBox.Show($"Invalid credentials. {remainingAttempts} attempt(s) left.");
+                        }
+
                     }
-                   
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Database error: " + ex.Message);
+                    MessageBox.Show("Error: " + ex.Message);
                 }
 
             }
@@ -194,14 +226,15 @@ namespace fitnesstrackerr
 
         }
 
-        string conString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Uday\OneDrive\Desktop\LoginDatabase.accdb;";
+        string conString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=LoginDatabase.accdb;";
         OleDbConnection con;
         private void btnRegister_Click(object sender, EventArgs e)
         {
 
 
             string username = textBox4.Text;
-            string password = textBox3.Text;
+            string password = txtRegisterPassword.Text;
+
 
             if (password.Length != 12 || !password.Any(char.IsUpper) || !password.Any(char.IsLower))
             {
@@ -235,12 +268,20 @@ namespace fitnesstrackerr
 
         private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
         {
-            textBox3.UseSystemPasswordChar = !chkShowRegisterPassword.Checked;
+            txtRegisterPassword.UseSystemPasswordChar = !chkShowRegisterPassword.Checked;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            textBox2.UseSystemPasswordChar = !chkShowLoginPassword.Checked;
+            txtLoginPassword.UseSystemPasswordChar = !chkShowLoginPassword.Checked;
+            
+        }
+
+        private void linkLabel2_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            panel3.Visible = false;
+            panel2.Visible = true;
+            panel2.BringToFront();
         }
     }
 }
