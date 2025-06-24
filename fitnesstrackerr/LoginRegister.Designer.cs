@@ -5,17 +5,17 @@ namespace fitnesstrackerr
 {
     partial class LoginRegister
     {
-        private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Label lblLogin;
-        private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.LinkLabel linkRegister;
-        private System.Windows.Forms.PictureBox pictureBoxLogo;
+        public System.ComponentModel.IContainer components = null;
+        public System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Label lblTitle;
+        public System.Windows.Forms.Label lblLogin;
+        public System.Windows.Forms.Label lblUsername;
+        public System.Windows.Forms.Label lblPassword;
+        public System.Windows.Forms.TextBox txtUsername;
+        public System.Windows.Forms.TextBox txtPassword;
+        public System.Windows.Forms.Button btnLogin;
+        public System.Windows.Forms.LinkLabel linkRegister;
+        public System.Windows.Forms.PictureBox pictureBoxLogo;
 
         protected override void Dispose(bool disposing)
         {
@@ -26,7 +26,7 @@ namespace fitnesstrackerr
             base.Dispose(disposing);
         }
 
-        private void InitializeComponent()
+        public void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginRegister));
             this.panel2 = new System.Windows.Forms.Panel();
@@ -34,7 +34,7 @@ namespace fitnesstrackerr
             this.panel3 = new System.Windows.Forms.Panel();
             this.chkShowRegisterPassword = new System.Windows.Forms.CheckBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtRegisterPassword = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
@@ -44,7 +44,7 @@ namespace fitnesstrackerr
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtLoginPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -64,10 +64,9 @@ namespace fitnesstrackerr
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.panel2.Controls.Add(this.chkShowLoginPassword);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txtLoginPassword);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.linkLabel1);
@@ -76,6 +75,7 @@ namespace fitnesstrackerr
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.chkShowLoginPassword);
             this.panel2.ForeColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(181, 40);
             this.panel2.Name = "panel2";
@@ -87,7 +87,7 @@ namespace fitnesstrackerr
             // 
             this.chkShowLoginPassword.AutoSize = true;
             this.chkShowLoginPassword.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkShowLoginPassword.Location = new System.Drawing.Point(40, 265);
+            this.chkShowLoginPassword.Location = new System.Drawing.Point(40, 271);
             this.chkShowLoginPassword.Name = "chkShowLoginPassword";
             this.chkShowLoginPassword.Size = new System.Drawing.Size(121, 21);
             this.chkShowLoginPassword.TabIndex = 12;
@@ -100,7 +100,7 @@ namespace fitnesstrackerr
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
             this.panel3.Controls.Add(this.chkShowRegisterPassword);
             this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Controls.Add(this.txtRegisterPassword);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.textBox4);
             this.panel3.Controls.Add(this.linkLabel2);
@@ -120,7 +120,7 @@ namespace fitnesstrackerr
             // 
             this.chkShowRegisterPassword.AutoSize = true;
             this.chkShowRegisterPassword.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkShowRegisterPassword.Location = new System.Drawing.Point(40, 263);
+            this.chkShowRegisterPassword.Location = new System.Drawing.Point(40, 267);
             this.chkShowRegisterPassword.Name = "chkShowRegisterPassword";
             this.chkShowRegisterPassword.Size = new System.Drawing.Size(121, 21);
             this.chkShowRegisterPassword.TabIndex = 11;
@@ -138,16 +138,16 @@ namespace fitnesstrackerr
             this.pictureBox3.TabIndex = 1;
             this.pictureBox3.TabStop = false;
             // 
-            // textBox3
+            // txtRegisterPassword
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(40, 235);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(250, 22);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.UseSystemPasswordChar = true;
+            this.txtRegisterPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
+            this.txtRegisterPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtRegisterPassword.ForeColor = System.Drawing.Color.White;
+            this.txtRegisterPassword.Location = new System.Drawing.Point(40, 235);
+            this.txtRegisterPassword.Name = "txtRegisterPassword";
+            this.txtRegisterPassword.Size = new System.Drawing.Size(250, 22);
+            this.txtRegisterPassword.TabIndex = 7;
+            this.txtRegisterPassword.UseSystemPasswordChar = true;
             // 
             // label6
             // 
@@ -181,6 +181,7 @@ namespace fitnesstrackerr
             this.linkLabel2.TabIndex = 8;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Login here";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked_1);
             // 
             // btnRegister
             // 
@@ -249,16 +250,16 @@ namespace fitnesstrackerr
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // textBox2
+            // txtLoginPassword
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(40, 243);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(250, 22);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.UseSystemPasswordChar = true;
+            this.txtLoginPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(25)))), ((int)(((byte)(35)))));
+            this.txtLoginPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLoginPassword.ForeColor = System.Drawing.Color.White;
+            this.txtLoginPassword.Location = new System.Drawing.Point(40, 243);
+            this.txtLoginPassword.Name = "txtLoginPassword";
+            this.txtLoginPassword.Size = new System.Drawing.Size(250, 22);
+            this.txtLoginPassword.TabIndex = 7;
+            this.txtLoginPassword.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -383,30 +384,30 @@ namespace fitnesstrackerr
 
         }
 
-        private Panel panel2;
-        private PictureBox pictureBox1;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private LinkLabel linkLabel1;
-        private Button button1;
-        private Label label5;
-        private PictureBox pictureBox2;
-        private Panel panel3;
-        private PictureBox pictureBox3;
-        private TextBox textBox3;
-        private Label label6;
-        private TextBox textBox4;
-        private LinkLabel linkLabel2;
-        private Button btnRegister;
-        private Label label7;
-        private Label label8;
-        private Label label9;
-        private Label label10;
-        private CheckBox chkShowRegisterPassword;
-        private CheckBox chkShowLoginPassword;
+        public Panel panel2;
+        public PictureBox pictureBox1;
+        public Label label1;
+        public Label label2;
+        public Label label3;
+        public Label label4;
+        public TextBox textBox1;
+        public TextBox txtLoginPassword;
+        public LinkLabel linkLabel1;
+        public Button button1;
+        public Label label5;
+        public PictureBox pictureBox2;
+        public Panel panel3;
+        public PictureBox pictureBox3;
+        public TextBox txtRegisterPassword;
+        public Label label6;
+        public TextBox textBox4;
+        public LinkLabel linkLabel2;
+        public Button btnRegister;
+        public Label label7;
+        public Label label8;
+        public Label label9;
+        public Label label10;
+        public CheckBox chkShowRegisterPassword;
+        public CheckBox chkShowLoginPassword;
     }
 }

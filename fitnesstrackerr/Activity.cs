@@ -20,7 +20,7 @@ namespace fitnesstrackerr
         private string selectedActivity;
         private string username = "uday";
 
-        string connString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Uday\OneDrive\Desktop\LoginDatabase.accdb;";
+        string connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=LoginDatabase.accdb;";
         OleDbConnection conn;
         string loggedInUsername;
 

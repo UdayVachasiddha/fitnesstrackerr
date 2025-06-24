@@ -5,7 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        public System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -212,17 +212,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblMetric1;
-        private System.Windows.Forms.TextBox txtMetric1;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Button BtnSave;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.Label lblMetric3;
-        private System.Windows.Forms.TextBox txtMetric3;
-        private System.Windows.Forms.Label lblMetric2;
-        private System.Windows.Forms.TextBox txtMetric2;
-        private System.Windows.Forms.Panel panelLifting;
+        public System.Windows.Forms.Label lblMetric1;
+        public System.Windows.Forms.TextBox txtMetric1;
+        public System.Windows.Forms.Label label24;
+        public System.Windows.Forms.Label label23;
+        public System.Windows.Forms.Button BtnSave;
+        public System.Windows.Forms.PictureBox pictureBox6;
+        public System.Windows.Forms.ComboBox comboBox6;
+        public System.Windows.Forms.Label lblMetric3;
+        public System.Windows.Forms.TextBox txtMetric3;
+        public System.Windows.Forms.Label lblMetric2;
+        public System.Windows.Forms.TextBox txtMetric2;
+        public System.Windows.Forms.Panel panelLifting;
     }
 }

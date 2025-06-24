@@ -13,7 +13,7 @@ namespace fitnesstrackerr
 {
     public partial class Goal : Form
     {
-        string connString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Uday\OneDrive\Desktop\LoginDatabase.accdb;";
+        string connString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=LoginDatabase.accdb;";
         OleDbConnection conn;
         private string username; // store username
 
@@ -52,7 +52,7 @@ namespace fitnesstrackerr
             {
                 int calorieGoal = int.Parse(textBox4.Text);
 
-                    OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Uday\OneDrive\Desktop\LoginDatabase.accdb");
+                    OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=LoginDatabase.accdb");
 
                 conn.Open();
                 OleDbCommand command = new OleDbCommand("INSERT INTO Goal (CalorieGoal) VALUES (?)", conn);
